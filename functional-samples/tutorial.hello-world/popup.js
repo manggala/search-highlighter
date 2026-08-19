@@ -10,9 +10,10 @@ function setStatus(message, type = '') {
 }
 
 function getSearchTerms() {
+	const separator = separatorInput.value === 'newline' ? /\r?\n/ : separatorInput.value;
 	return [...new Set(
 		termsInput.value
-			.split(separatorInput.value)
+			.split(separator)
 			.map((term) => term.trim())
 			.filter(Boolean),
 	)];
