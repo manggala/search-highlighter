@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Search Highlighter</title>
+    <link rel="stylesheet" href="bulk-search.css">
+  </head>
+  <body>
+    <main>
+      <div class="tool-header">
+        <button class="back" id="back-home" type="button" aria-label="Back to home">&#8592;</button>
+        <h1>Bulk Search Highlighter</h1>
+      </div>
+      <div class="field">
+        <label for="terms">Search array</label>
+        <textarea id="terms" placeholder="alpha&#10;beta&#10;gamma" autofocus></textarea>
+      </div>
+      <div class="field">
+        <label for="separator">Separator</label>
+        <select id="separator">
+          <option value="newline">Enter (new line)</option>
+          <option value="-">Hyphen (-)</option>
+          <option value=";">Semicolon (;)</option>
+          <option value=",">Comma (,)</option>
+        </select>
+      </div>
+      <div class="actions">
+        <button id="search" type="button">Search page</button>
+        <button id="check-rows" type="button">Check same row</button>
+        <button id="clear" type="button">Clear</button>
+      </div>
+      <p id="status" role="status" aria-live="polite"></p>
+      <section id="results-panel" hidden>
+        <h2>Search results</h2>
+        <div class="results-scroll">
+          <table id="results-table">
+            <thead>
+              <tr>
+                <th>Search term</th>
+                <th>Status</th>
+                <th>Matches</th>
+              </tr>
+            </thead>
+            <tbody id="results-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="bulk-search.js"></script>
+  </body>
+</html>
